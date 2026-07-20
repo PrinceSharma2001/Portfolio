@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Portfolio — React + Vite + Tailwind
 
 Ye ek personal portfolio project hai jisme React Router se multiple pages link kiye gaye hain, aur Navbar + Hero + Footer sabhi pages me common (shared) rehte hain.
@@ -74,3 +75,7 @@ Contact page ka form ab ek real backend API (Node + Express + PostgreSQL) ko dat
 4. Developer submitted messages `/admin` page par dekh sakta hai (Navbar me link nahi hai — sirf developer ke liye) — admin key daalni hogi jo `backend/.env` me `ADMIN_KEY` set ki hai.
 
 Dono — frontend (`npm run dev`, port 5173) aur backend (`npm run dev`, port 5000) — alag terminal me chalane honge.
+=======
+# Portfolio
+Pofile prince sharma
+>>>>>>> a300cabe45ac16e1501b6a7f2e110190df879232
