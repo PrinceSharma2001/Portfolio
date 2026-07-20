@@ -52,12 +52,12 @@ export default function Navbar() {
                 to={link.to}
                 end={link.to === '/'}
                 className={({ isActive }) =>
-                  `px-4 py-2 rounded-md transition-colors ${
-                    isActive
-                      ? 'text-night bg-gradient-to-r from-amber to-teal'
-                      : 'text-parchment-dim hover:text-parchment'
-                  }`
-                }
+  `relative px-4 py-2 transition-all duration-300 after:absolute after:left-4 after:right-4 after:-bottom-1 after:h-[2px] after:w-0 after:bg-indigo-500 after:transition-all after:duration-300 hover:after:w-[calc(100%-2rem)] ${
+    isActive
+      ? 'text-indigo-600 font-semibold after:w-[calc(100%-2rem)]'
+      : 'text-slate-600'
+  }`
+}
               >
                 {link.label}
               </NavLink>
@@ -67,13 +67,13 @@ export default function Navbar() {
 
         {/* right side controls */}
         <div className="flex items-center gap-3">
-          <a
-            href="/Prince_Sharma_CV.pdf"
-            download
-            className="hidden md:inline-flex items-center gap-1.5 px-4 py-2 btn-gradient rounded-md text-sm"
-          >
-            Resume
-          </a>
+         <a
+  href="/Prince_Sharma_CV.pdf"
+  download
+  className="hidden md:inline-block relative px-1 py-2 text-slate-700 transition-all duration-300 after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-indigo-500 after:transition-all after:duration-300 hover:after:w-full hover:text-indigo-600"
+>
+  Resume
+</a>
           <ThemeToggle theme={theme} onToggle={toggleTheme} className="hidden md:flex" />
 
           {/* mobile toggle */}
@@ -114,27 +114,37 @@ export default function Navbar() {
                 to={link.to}
                 end={link.to === '/'}
                 onClick={() => setOpen(false)}
-                className={({ isActive }) =>
-                  `block px-4 py-3 rounded-md transition-colors ${
-                    isActive
-                      ? 'text-night bg-gradient-to-r from-amber to-teal'
-                      : 'text-parchment-dim hover:text-parchment hover:bg-ink-700'
-                  }`
-                }
+               className={({ isActive }) =>
+  `relative block px-4 py-3 transition-all duration-300
+  after:absolute after:left-4 after:bottom-2
+  after:h-[2px] after:w-0
+  after:bg-gradient-to-r after:from-indigo-500 after:via-purple-500 after:to-sky-500
+  after:transition-all after:duration-300
+  ${
+    isActive
+      ? 'text-indigo-600 font-semibold after:w-[calc(100%-2rem)]'
+      : 'text-slate-600 hover:text-indigo-600 hover:after:w-[calc(100%-2rem)]'
+  }`
+}
               >
                 {link.label}
               </NavLink>
             </li>
           ))}
-          <li className="px-4 pt-3">
-            <a
-              href="/Prince_Sharma_Resume.pdf"
-              download
-              className="block text-center py-3 btn-gradient rounded-md"
-            >
-              Download Resume
-            </a>
-          </li>
+         <li className="px-4 pt-3">
+  <a
+    href="/Prince_Sharma_Resume.pdf"
+    download
+    className="relative block text-center py-3 text-slate-600 hover:text-indigo-600 transition-all duration-300
+    after:absolute after:left-4 after:right-4 after:bottom-2
+    after:h-[2px] after:w-0
+    after:bg-gradient-to-r after:from-indigo-500 after:via-purple-500 after:to-sky-500
+    after:transition-all after:duration-300
+    hover:after:w-[calc(100%-2rem)]"
+  >
+    Download Resume
+  </a>
+</li>
           <li className="flex items-center justify-between px-4 pt-3 mt-2 border-t border-ink-600">
             <span className="text-parchment-dim">Theme</span>
             <ThemeToggle theme={theme} onToggle={toggleTheme} />
