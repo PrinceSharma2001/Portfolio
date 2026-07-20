@@ -54,7 +54,7 @@ export default function Hero({
                 Get in touch
               </Link>
               <a
-                href="/Prince_Sharma_Resume.pdf"
+                href="/Prince_Sharma_CV.pdf"
                 download
                 className="px-6 py-3 border border-ink-600 text-parchment font-semibold rounded-md hover:border-amber hover:text-amber transition-colors inline-flex items-center gap-2"
               >

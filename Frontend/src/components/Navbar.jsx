@@ -68,7 +68,7 @@ export default function Navbar() {
         {/* right side controls */}
         <div className="flex items-center gap-3">
           <a
-            href="/Prince_Sharma_Resume.pdf"
+            href="/Prince_Sharma_CV.pdf"
             download
             className="hidden md:inline-flex items-center gap-1.5 px-4 py-2 btn-gradient rounded-md text-sm"
           >
