@@ -1,17 +1,16 @@
-<<<<<<< HEAD
 # Portfolio — React + Vite + Tailwind
 
-Ye ek personal portfolio project hai jisme React Router se multiple pages link kiye gaye hain, aur Navbar + Hero + Footer sabhi pages me common (shared) rehte hain.
+This is a personal portfolio project built using React, Vite, and Tailwind CSS. It uses React Router for navigation between multiple pages, while the Navbar, Hero, and Footer components remain shared across the application.
 
-## Structure
+## Project Structure
 
-```
+```text
 src/
   components/
-    Navbar.jsx     -> top navigation (common on every page)
-    Hero.jsx        -> shared hero component (full variant on Home, compact variant on inner pages)
-    Footer.jsx      -> footer (common on every page)
-    Layout.jsx      -> wraps Navbar + Footer + page content (Outlet)
+    Navbar.jsx     -> Common navigation bar for all pages
+    Hero.jsx       -> Shared Hero component (Full version on Home, Compact version on inner pages)
+    Footer.jsx     -> Common footer for all pages
+    Layout.jsx     -> Wraps Navbar + Footer + page content using Outlet
   pages/
     Home.jsx
     About.jsx
@@ -19,63 +18,138 @@ src/
     Projects.jsx
     Contact.jsx
     NotFound.jsx
-  App.jsx           -> all routes defined here
-  main.jsx          -> entry point (BrowserRouter)
+  App.jsx          -> Defines all application routes
+  main.jsx         -> Application entry point (BrowserRouter)
 ```
 
-## Kaise chalayein (VS Code me)
+## Getting Started
 
-1. Is folder ko VS Code me open karo.
-2. Terminal open karo aur dependencies install karo:
+1. Open the project folder in Visual Studio Code.
+2. Install the project dependencies:
 
-   ```bash
-   npm install
-   ```
+```bash
+npm install
+```
 
-3. Dev server start karo:
+3. Start the development server:
 
-   ```bash
-   npm run dev
-   ```
+```bash
+npm run dev
+```
 
-4. Browser me `http://localhost:5173` open karo — site live dikh jayegi.
+4. Open the application in your browser:
 
-## Production build
+```
+http://localhost:5173
+```
+
+## Production Build
 
 ```bash
 npm run build
 npm run preview
 ```
 
-## Notes
+## Features
 
-- Navigation links: Home, About Us, Education, Projects, Contact Us — sab React Router (`react-router-dom`) se link hain, click karne par page reload hue bina switch hote hain.
-- Colors, fonts aur design tokens `tailwind.config.js` me define hain — inhe easily customize kar sakte ho.
-- Saari images abhi dummy/placeholder SVG hain — inhe apni real photos/images se replace kar sakte ho.
+- Multi-page navigation using React Router.
+- Shared Navbar, Hero, and Footer components.
+- Smooth page transitions without page reloads.
+- Responsive design built with Tailwind CSS.
+- Easy customization of colors, fonts, and design tokens through `tailwind.config.js`.
+- Placeholder images can be replaced with your own photos and assets.
 
-## Dark / Light mode
+## Dark / Light Mode
 
-- Navbar (top-right) me ek sun/moon icon button hai — click karke theme switch ho jaata hai.
-- Chosen theme `localStorage` me save hoti hai, so refresh/next visit par bhi wahi theme load hogi.
-- Pehli visit par agar koi saved preference nahi hai, to system/browser ki preference (`prefers-color-scheme`) follow hoti hai, warna default dark hai.
-- Theme logic `src/components/Navbar.jsx` me hai aur colors `src/index.css` ke `:root` / `html.light` CSS variables se control hote hain.
+- A theme toggle button (Sun/Moon icon) is available in the top-right corner of the Navbar.
+- The selected theme is saved in `localStorage`, so it remains the same after refreshing or reopening the website.
+- On the first visit, the application follows the system's preferred color scheme (`prefers-color-scheme`). If no preference is detected, Dark Mode is used by default.
+- Theme logic is implemented in `src/components/Navbar.jsx`, while the color variables are defined in `src/index.css`.
 
 ## Resume Download
 
-- Navbar (desktop + mobile) aur Home page ke Hero section me "Download Resume" / "Resume" button hai.
-- Dummy resume PDF `public/Prince_Sharma_Resume.pdf` me hai — isko apni real resume se replace kar sakte ho (same file name rakhna, ya button ka `href` update kar dena).
+- A **Download Resume** button is available in both the Navbar and the Home page Hero section.
+- The sample resume file is located at:
 
-## Backend + PostgreSQL (Get in Touch form)
+```
+public/Prince_Sharma_Resume.pdf
+```
 
-Contact page ka form ab ek real backend API (Node + Express + PostgreSQL) ko data bhejta hai, jo `backend/` folder me hai.
+Replace this file with your own resume while keeping the same filename, or update the button's `href` accordingly.
 
-1. `cd backend`, phir `backend/README.md` follow karo — PostgreSQL setup, `.env` config, `npm install`, `npm run dev`.
-2. Root portfolio folder me `.env.example` ko `.env` me copy karo (`VITE_API_URL=http://localhost:5000`) taaki frontend backend ko sahi URL par call kare.
-3. Form submit hone par data `messages` table me PostgreSQL me store hota hai.
-4. Developer submitted messages `/admin` page par dekh sakta hai (Navbar me link nahi hai — sirf developer ke liye) — admin key daalni hogi jo `backend/.env` me `ADMIN_KEY` set ki hai.
+## Backend Integration (Contact Form + PostgreSQL)
 
-Dono — frontend (`npm run dev`, port 5173) aur backend (`npm run dev`, port 5000) — alag terminal me chalane honge.
-=======
-# Portfolio
-Pofile prince sharma
->>>>>>> a300cabe45ac16e1501b6a7f2e110190df879232
+The Contact page is connected to a Node.js + Express + PostgreSQL backend located inside the `backend/` folder.
+
+### Setup Instructions
+
+1. Navigate to the backend folder:
+
+```bash
+cd backend
+```
+
+2. Follow the instructions in `backend/README.md` to:
+   - Install dependencies
+   - Configure PostgreSQL
+   - Create the `.env` file
+   - Start the backend server
+
+3. In the frontend project, copy:
+
+```
+.env.example
+```
+
+to
+
+```
+.env
+```
+
+and set:
+
+```env
+VITE_API_URL=http://localhost:5000
+```
+
+4. Submitted contact messages are stored in the PostgreSQL `messages` table.
+
+5. Developers can view submitted messages on the hidden `/admin` page by entering the `ADMIN_KEY` configured in `backend/.env`.
+
+## Running the Project
+
+Run both the frontend and backend in separate terminals.
+
+### Frontend
+
+```bash
+npm run dev
+```
+
+Runs on:
+
+```
+http://localhost:5173
+```
+
+### Backend
+
+```bash
+cd backend
+npm run dev
+```
+
+Runs on:
+
+```
+http://localhost:5000
+```
+
+## Author
+
+**Prince Sharma**
+
+Software Engineer | Full Stack Developer
+
+Thank you for visiting my portfolio!
